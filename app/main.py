@@ -74,8 +74,8 @@ class Document(BaseModel):
     birth_date: str = Field(
         title="birth date",
         description="birth date in the format DD/MM/YYYY",
-        min_length=8,
-        max_length=8,
+        min_length=10,
+        max_length=10,
     )
 
     sex: str = Field(
@@ -88,8 +88,8 @@ class Document(BaseModel):
     expiration_date: str = Field(
         title="expiration date",
         description="expiration date in the format DD/MM/YYYY",
-        min_length=8,
-        max_length=8,
+        min_length=10,
+        max_length=10,
     )
 
     nationality: str = Field(
