@@ -133,7 +133,7 @@ class Document(BaseModel):
 def compute_mrz(document: Document):
     match document.format_type:
         case "TD1":
-            return TD1CodeGenerator(
+            code = TD1CodeGenerator(
                 document_type=document.document_type,
                 country_code=document.contry_code,
                 document_number=document.document_number,
@@ -146,8 +146,9 @@ def compute_mrz(document: Document):
                 optional_data1=document.optional_data_1,
                 optional_data2=document.optional_data_2,
             )
+            return f"{code._line1()}\n{code._line2()}\n{code._line3()}"
         case "TD2":
-            return TD2CodeGenerator(
+            code = TD2CodeGenerator(
                 document_type=document.document_type,
                 country_code=document.contry_code,
                 document_number=document.document_number,
@@ -159,8 +160,9 @@ def compute_mrz(document: Document):
                 given_names=document.given_names,
                 optional_data=document.optional_data_1,
             )
+            return f"{code._line1()}\n{code._line2()}"
         case "P":
-            return TD3CodeGenerator(
+            code = TD3CodeGenerator(
                 document_type=document.document_type,
                 country_code=document.contry_code,
                 document_number=document.document_number,
@@ -172,8 +174,9 @@ def compute_mrz(document: Document):
                 given_names=document.given_names,
                 optional_data=document.optional_data_1,
             )
+            return f"{code._line1()}\n{code._line2()}"
         case "MRVA":
-            return MRVACodeGenerator(
+            code = MRVACodeGenerator(
                 document_type=document.document_type,
                 country_code=document.contry_code,
                 document_number=document.document_number,
@@ -185,8 +188,9 @@ def compute_mrz(document: Document):
                 given_names=document.given_names,
                 optional_data=document.optional_data_1,
             )
+            return f"{code._line1()}\n{code._line2()}"
         case "MRVB":
-            return MRVBCodeGenerator(
+            code = MRVBCodeGenerator(
                 document_type=document.document_type,
                 country_code=document.contry_code,
                 document_number=document.document_number,
@@ -198,6 +202,7 @@ def compute_mrz(document: Document):
                 given_names=document.given_names,
                 optional_data=document.optional_data_1,
             )
+            return f"{code._line1()}\n{code._line2()}"
         case _:
             return "error"
 
