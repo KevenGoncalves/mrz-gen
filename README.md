@@ -1,4 +1,4 @@
-# MRzilian
+# Mrzilian
 
 ![image](public/mrz.jpeg)
 
