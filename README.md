@@ -1,4 +1,4 @@
-# MRZ Gen API
+# MRzilan
 
 ![image](public/mrz.jpeg)
 
