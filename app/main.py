@@ -210,15 +210,15 @@ def compute_mrz(document: Document):
 def compute_check_mrz(document: CheckDocument):
     match document.format_type:
         case "TD1":
-            return TD1CodeChecker(document.mrz)
+            return TD1CodeChecker(document.mrz, compute_warnings=True)
         case "TD2":
-            return TD2CodeChecker(document.mrz)
+            return TD2CodeChecker(document.mrz, compute_warnings=True)
         case "P":
-            return TD3CodeChecker(document.mrz)
+            return TD3CodeChecker(document.mrz, compute_warnings=True)
         case "MRVA":
-            return MRVACodeChecker(document.mrz)
+            return MRVACodeChecker(document.mrz, compute_warnings=True)
         case "MRVB":
-            return MRVBCodeChecker(document.mrz)
+            return MRVBCodeChecker(document.mrz, compute_warnings=True)
         case _:
             return "error"
 
@@ -252,4 +252,4 @@ def check(document: CheckDocument):
             status_code=status.HTTP_400,
             detail="invalid format type"
         )
-    return {"valid": cmp}
+    return cmp
