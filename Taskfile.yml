@@ -1,0 +1,14 @@
+---
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  dev:
+    cmd: fastapi dev ./app/main.py
+
+  start:
+    cmd: fastapi run ./app/main.py
+
+  install:
+    cmd: pip install -r requirements.txt
