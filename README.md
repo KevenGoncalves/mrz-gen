@@ -29,3 +29,6 @@ Organization specifications (ICAO 9303):
 5. run `task dev` for development and `task start` for prod
 6. visit `http://localhost:8000/api/v1/docs`
 7. have fun :)
+
+---
+Thanks to [Arg0s1080](https://github.com/Arg0s1080) for the comprehension about MRZ
