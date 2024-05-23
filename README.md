@@ -30,5 +30,10 @@ Organization specifications (ICAO 9303):
 6. visit `http://localhost:8000/api/v1/docs`
 7. have fun :)
 
+## Example
+
+I<MOZGONCALVES<<KEVEN<JOSE<MANUEL<<<
+50012<<<<8MOZ0204244M2102023DA<<<<<1
+
 ---
 Thanks to [Arg0s1080](https://github.com/Arg0s1080) for the comprehension about MRZ
