@@ -32,7 +32,7 @@ Organization specifications (ICAO 9303):
 
 ## Example
 
-I<MOZGONCALVES<<KEVEN<JOSE<MANUEL<<<
+I<MOZGONCALVES<<KEVEN<JOSE<MANUEL<<<\n
 50012<<<<8MOZ0204244M2102023DA<<<<<1
 
 ---
