@@ -1,4 +1,5 @@
-from fastapi import FastAPI, HTTPException, status
+from fastapi import APIRouter, FastAPI, HTTPException, status
+import fastapi
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from pydantic.fields import Field
@@ -14,14 +15,16 @@ from mrz.checker.mrva import MRVACodeChecker
 from mrz.checker.mrvb import MRVBCodeChecker
 
 
-app = FastAPI(root_path="/api/v1")
+fast = FastAPI()
 
-app.add_middleware(
+fast.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app = APIRouter(prefix="/api/v1")
 
 
 class CheckDocument(BaseModel):
@@ -253,3 +256,6 @@ def check(document: CheckDocument):
             detail="invalid format type"
         )
     return cmp
+
+
+fast.include_router(app)
