@@ -32,8 +32,9 @@ Organization specifications (ICAO 9303):
 
 ## Example
 
-I<MOZGONCALVES<<KEVEN<JOSE<MANUEL<<<\n
-50012<<<<8MOZ0204244M2102023DA<<<<<1
+````bash
+I<MOZGONCALVES<<KEVEN<JOSE<MANUEL<<<\n50012<<<<8MOZ0204244M2102023DA<<<<<1
+```
 
 ---
 Thanks to [Arg0s1080](https://github.com/Arg0s1080) for the comprehension about MRZ
